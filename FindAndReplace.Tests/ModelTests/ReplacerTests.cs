@@ -7,10 +7,21 @@ namespace FindAndReplace.Tests
   public class ReplacerTests
   {
     [TestMethod]
-    public void NameOfMethodWeAreTesting_DescriptionOfBehavior_ExpectedReturnValue()
+    public void RemoveBlankSpaces_RemoveBlankSpaces_Hello_world()
     {
-      // any necessary logic to prep for test; instantiating new classes, etc.
-      //Assert.AreEqual(EXPECTED RESULT, CODE TO TEST);
+      Assert.AreEqual("Hello world", Replacer.RemoveBlankSpaces("Hello world"));
+    }
+
+    [TestMethod]
+    public void FindAndReplace_ReplaceWordInText_ChangedText()
+    {
+      Assert.AreEqual("Hello universe", Replacer.FindAndReplace("Hello world", "world", "universe"));
+    }
+
+    [TestMethod]
+    public void FindAndReplace_ReplaceWordPieceInText_ChangedText()
+    {
+      Assert.AreEqual("I am walking my dog to the doghedral", Replacer.FindAndReplace("I am walking my cat to the cathedral", "cat", "dog"));
     }
   }
 }
